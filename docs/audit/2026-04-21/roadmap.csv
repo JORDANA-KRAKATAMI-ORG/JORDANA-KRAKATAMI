@@ -1,0 +1,51 @@
+phase,step_no,title,priority,depends_on
+1,1,Supabase schema audit — tables RLS indexes,Critical,
+1,2,Environment secrets management — Doppler or Supabase Vault,Critical,
+1,3,GitHub repo structure — monorepo vs multi-repo branch strategy,Critical,
+1,4,VPS hardening — SSH keys fail2ban UFW on srv1201204,Critical,
+1,5,n8n backup strategy — nightly export to GitHub,High,3
+1,6,Supabase daily backup — pg_dump cron to R2/S3,High,1
+1,7,Domain SSL audit — Letsencrypt auto-renew,High,
+1,8,Logging centralization — Loki Grafana or Papertrail,High,4
+1,9,Uptime monitoring — self-hosted Uptime Kuma,Medium,
+1,10,Documentation base — Notion Linear wiki,Medium,
+2,11,Wallester API auth — OAuth2 token refresh in n8n,Critical,2
+2,12,Wallester virtual card creation workflow,Critical,11
+2,13,Wallester webhook receiver — transactions limits freezes,Critical,11
+2,14,Wallester card management UI,Critical,12;13
+2,15,Revolut Business API setup — sandbox tests,High,
+2,16,Revolut webhook integration — payment events to n8n,High,15
+2,17,SMSTome integration — buy number receive SMS parse OTP,High,
+2,18,5sim fallback on SMSTome failure,High,17
+2,19,SMS pool management — Supabase table numbers status TTL,High,17
+2,20,Payment routing — Wallester vs Revolut automatic,Medium,14;16
+2,21,Card limit automation — dynamic spending limits,Medium,12
+2,22,Transaction reconciliation — daily cron,Medium,13;16
+3,23,DuoPlus API setup — auth device listing remote control,Critical,
+3,24,DuoPlus device pool — Supabase table,Critical,23
+3,25,NodeMaven proxy rotation — Bulgarian proxies,High,
+3,26,Proxy + Device binding,High,24;25
+3,27,Browserbase project setup,High,
+3,28,Browserbase session pooling,High,27
+3,29,Browser fingerprint profiles per device,Medium,26
+3,30,Automation task queue — n8n,Medium,26;27
+3,31,Screenshot evidence storage — Supabase Storage,Medium,30
+3,32,Error retry and alerting — Slack Telegram,Medium,30
+3,33,DuoPlus health check cron 15 min,Medium,24
+4,34,ElevenLabs TTS integration,High,
+4,35,Whisper API STT,High,
+4,36,Claude API integration — Молти brain,High,
+4,37,Conversation memory — Supabase,Medium,36
+4,38,Intent routing via Claude,Medium,36
+4,39,Voice card action — Freeze card via Молти,Medium,14;36
+4,40,Multi-channel bot — Telegram web,Medium,36
+5,41,Grafana dashboard — VPS n8n API,High,8
+5,42,Anomaly detection — tx volume 3x mean,High,22
+5,43,Supabase RLS audit,Critical,1
+5,44,API rate limit tracking,Medium,
+5,45,Incident runbook,Medium,
+5,46,Penetration test checklist — OWASP,Medium,
+6,47,Auto-scaling — queue 50 spawn Browserbase,Medium,30
+6,48,Cost optimization dashboard,Medium,
+6,49,Legacy data migration plan,Medium,
+6,50,Prime Time Launch checklist,Critical,
